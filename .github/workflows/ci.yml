@@ -48,4 +48,10 @@ jobs:
       - name: Publier l'image Docker
         run: docker push ghcr.io/klysh-devops/projet-devops-alex:${{ github.sha }}
 
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Simuler le déploiement
+        run: echo "🚀 CI validée, prêt pour le déploiement"
